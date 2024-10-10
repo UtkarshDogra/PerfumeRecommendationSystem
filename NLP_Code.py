@@ -57,7 +57,7 @@ def loadDataset(path):
 # Step 2: Feature Engineering - Create Weighted Combined Features
 def create_weighted_features(df, weight_name = 4, weight_notes=2, weight_description=2, weight_gender=3,
                              weight_vibes=3, weight_ingredients=2, weight_concentration=1,
-                             weight_year=3,weight_brand=3, weight_family=3):
+                             weight_year=3,weight_brand=1, weight_family=3):
     # Convert all relevant columns to strings and fill NaN with empty strings
     name = df['Name'].fillna('').astype(str)
     notes = df['All Notes'].fillna('').astype(str)
