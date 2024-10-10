@@ -137,13 +137,14 @@ def recommendFragrance(user_input):
         description = str(data.iloc[i]['Description']).replace("\n", "").replace("Description","").replace("description","")
         url_image = str(data.iloc[i]['Image'])  
         
-        # Append a dictionary with all required fields
-        perfume_list.append({
-            "Brand": brand,
-            "Name": name,
-            "Notes": notes,
-            "Description": description,
-            "See Image": url_image
+        # Ensure duplicates are not added
+        if not any(perfume['Name'] == name for perfume in perfume_list):
+            perfume_list.append({
+                "Brand": brand,
+                "Name": name,
+                "Notes": notes,
+                "Description": description,
+                "See Image": url_image
         })
     
     # Check if the number of recommendations is less than 5, increase the number if necessary
@@ -157,6 +158,9 @@ def recommendFragrance(user_input):
             description = data.iloc[i]['Description']
             url_image = data.iloc[i]['Image']
             
+            if(len(perfume_list) >= 5):
+                break
+
             # Ensure duplicates are not added
             if not any(perfume['Name'] == name for perfume in perfume_list):
                 perfume_list.append({
