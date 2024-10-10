@@ -152,11 +152,11 @@ def recommendFragrance(user_input):
         n += 1
         top_indices = get_diverse_recommendations(cosine_similarities, data, n)
         for i in top_indices:
-            brand = data.iloc[i]['Brand']
-            name = data.iloc[i]['Name']
-            notes = data.iloc[i]['All Notes']
-            description = data.iloc[i]['Description']
-            url_image = data.iloc[i]['Image']
+            brand = str(data.iloc[i]['Brand'])
+            name = str(data.iloc[i]['Name'])
+            notes = str(data.iloc[i]['All Notes'])
+            description = str(data.iloc[i]['Description']).replace("\n", "").replace("Description","").replace("description","")
+            url_image = str(data.iloc[i]['Image'])  
             
             if(len(perfume_list) >= 5):
                 break
