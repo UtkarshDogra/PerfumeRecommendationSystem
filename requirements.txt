@@ -5,6 +5,4 @@ seaborn
 numpy
 matplotlib
 scikit-learn
-itertools
-random
 nltk
