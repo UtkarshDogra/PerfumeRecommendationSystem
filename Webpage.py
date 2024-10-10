@@ -99,10 +99,11 @@ if 'results' in st.session_state and st.session_state.results:
     
     # Function to create clickable links for 'See Image'
     def make_clickable(link):
-        return f'<a href="{link}" target="_blank">See Image</a>' if link else "No Image"
+        return f'<a href="{link}" target="_blank">See Image</a>' if (link and link!="none") else "No Image (feature to fetch image from first google result not added yet)"
 
     # Apply make_clickable function to the 'See Image' column to create hyperlinks
     df['See Image'] = df['See Image'].apply(make_clickable)
+
     
     # Display the table with HTML rendering for hyperlinks
     st.markdown('<div class="table-container">' + df.to_html(escape=False, index=False) + '</div>', unsafe_allow_html=True)
