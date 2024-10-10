@@ -1,6 +1,10 @@
-streamlit==1.39.0
-pandas==2.2.3
-scikit-learn==1.3.0 
-nltk==3.8.1
-numpy==1.24.4
-# Add other dependencies as needed
+pycaret
+streamlit
+pandas
+seaborn
+numpy
+matplotlib
+scikit-learn
+itertools
+random
+nltk
