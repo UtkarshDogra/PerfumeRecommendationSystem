@@ -109,7 +109,7 @@ def recommendFragrance(user_input):
     expanded_user_input = expand_query_with_synonyms(user_input)
     
     # Load the dataset
-    data = loadDataset('D:\Perfume recommendation chatbot\Perfume_Dataset_Personal_Project.csv')
+    data = loadDataset('./Perfume_Dataset_Personal_Project.csv')
 
     # Create weighted features for similarity comparison
     combined_features = create_weighted_features(data)
